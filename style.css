@@ -6,8 +6,7 @@
 
 body {
     font-family: 'Times New Roman';
-    background: #272727;
-    color: rgb(221, 217, 217);
+    background: rgb(46, 46, 46);
     display: flex;
     justify-content: center;
     padding: 40px;
@@ -15,7 +14,8 @@ body {
 
 .container {
     width: 700px;
-    background: #70706e;
+    background: rgb(151, 150, 150);
+    color: white;
     padding: 25px;
     border-radius: 15px;
 }
@@ -55,14 +55,14 @@ input {
 .input-section button {
     width: 100px;
     cursor: pointer;
-    background-color: rgb(61, 192, 79);
+    background-color: rgb(9, 107, 199);
     color: rgb(255, 255, 255);
     border-radius: 15px;
     border: none;
 }
 
 .input-section button:hover {
-    background-color: rgba(79, 238, 100, 0.8);
+    background-color: rgb(46, 137, 223);
 }
 
 .filters {
@@ -117,6 +117,21 @@ li {
     text-decoration: line-through;
 }
 
-.delete-btn {
+.complete-button {
+    background-color: rgb(1, 194, 1);
+    color: white;
+}
+
+.complete-button:hover {
+    background-color: rgb(47, 245, 47);
+}
+
+.delete-button {
+    background-color: rgb(218, 11, 11);
+    color: white;
     margin-left: 10px;
+}
+
+.delete-button:hover {
+    background-color: rgb(226, 47, 47);
 }

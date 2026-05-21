@@ -40,30 +40,31 @@ function displayTasks(filter = "All") {
 
         const buttonSection = document.createElement("div");
 
-        const completeBtn = document.createElement("button");
-        completeBtn.textContent = "Complete";
+        const completeButton = document.createElement("button");
+        completeButton.textContent = "Complete";
+        completeButton.classList.add("complete-button");
 
-        completeBtn.addEventListener("click", () => {
+        completeButton.addEventListener("click", () => {
             tasks[index].completed = !tasks[index].completed;
 
             saveTasks();
             displayTasks(filter);
         });
 
-        const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
 
-        deleteBtn.classList.add("delete-btn");
+        deleteButton.classList.add("delete-button");
 
-        deleteBtn.addEventListener("click", () => {
+        deleteButton.addEventListener("click", () => {
             tasks.splice(index, 1);
 
             saveTasks();
             displayTasks(filter);
         });
 
-        buttonSection.appendChild(completeBtn);
-        buttonSection.appendChild(deleteBtn);
+        buttonSection.appendChild(completeButton);
+        buttonSection.appendChild(deleteButton);
 
         li.appendChild(taskInfo);
         li.appendChild(buttonSection);
@@ -82,8 +83,11 @@ addButton.addEventListener("click", () => {
     const taskDateValue = taskDate.value;
 
     if (taskText === "") {
-        alert("Please enter a task");
+        message.textContent = "Please enter a task before adding";
+        message.style.color = "red";
         return;
+    } else {
+        message.textContent = "";
     }
 
     const newTask = {
