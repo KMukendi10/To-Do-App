@@ -1,40 +1,97 @@
-# To-Do-App
+# Kazadi To-Do App
 
-## Overview
-This is a simple to-do application built using HTML, CSS, and vanilla JavaScript. It demonstrates DOM manipulation, event handling, and data persistence using localStorage.
+A simple and responsive To-Do List application built using HTML, CSS, and Vanilla JavaScript.  
+This project allows users to add, complete, delete, and filter tasks while storing data using Local Storage.
+
+---
 
 ## Features
+
 - Add new tasks
+- Add due dates to tasks
 - Mark tasks as completed
 - Delete tasks
-- Filter tasks (All / Active / Completed)
-- Persistent storage using localStorage
+- Filter tasks:
+  - All
+  - Active
+  - Completed
+- Tasks saved using Local Storage
+- Displays a message when no tasks exist
+- Responsive and beginner-friendly design
 
-## Technologies Used
-- HTML5
-- CSS3
-- JavaScript (ES6)
-- DOM Manipulation
-- localStorage API
+---
+
+## Built With
+
+- HTML
+- CSS
+- Vanilla JavaScript
+
+---
+
+## Project Structure
+
+```bash
+To-Do-App/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+---
 
 ## How It Works
-Tasks are stored in an array of objects. Each task has:
-- id
-- text
-- completed status
 
-Whenever a task is added, deleted, or updated, the array is saved to localStorage using JSON.stringify(). On page load, data is retrieved using JSON.parse() and rendered dynamically.
+1. You enter a task in the input field
+2. You can optionally select a due date for your task
+3. Then click the **Add Task** button
+4. Use:
+   - **Complete** to mark a task done
+   - **Delete** to remove a task
+5. Filter tasks using:
+   - All
+   - Active
+   - Completed
 
-## Key JavaScript Concepts Used
-- querySelector() for selecting DOM elements
-- addEventListener() for handling user input
-- createElement() for dynamic task creation
-- classList for styling completed tasks
-- filter() and map() for state management
-- localStorage for persistence
+All tasks are automatically saved in the browser using Local Storage so that when you refresh the page the tasks don't dissapear.
 
-## What I Learned
-I learned how to manipulate the DOM dynamically without frameworks, manage application state using arrays, and persist data in the browser using localStorage. I also improved my understanding of event-driven programming in JavaScript.
+---
 
-## Live Demo
-(Add your GitHub Pages link here)
+## Learning Outcomes
+
+The project helped improve my understanding of:
+
+- DOM manipulation
+- Event listeners
+- Local Storage
+- Array methods
+- Dynamic innerHTML creation with JavaScript
+- CSS Flexbox
+
+---
+
+## Future Improvements
+
+- Add edit task functionality
+- Add dark and light mode toggle
+- Add drag-and-drop for task sorting
+- Add task priority levels
+- Add search functionality
+- Add animations and transitions
+
+---
+
+## How To Run
+
+1. Clone the repository to your machine
+2. Open the folder
+3. Run `index.html` in your browser
+4. Alternatively use the netlify live url or github pages
+
+---
+
+## Author
+
+Created by Kazadi Mukendi

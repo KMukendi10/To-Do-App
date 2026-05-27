@@ -12,10 +12,11 @@ body {
     padding: 40px;
 }
 
+/* Container Styling */
 .container {
     width: 700px;
     background: rgb(151, 150, 150);
-    color: white;
+    color: rgb(255, 255, 255);
     padding: 25px;
     border-radius: 15px;
 }
@@ -25,11 +26,7 @@ h1 {
     padding: 20px;
 }
 
-#count {
-    text-align: center;
-    padding: 10px;
-}
-
+/* Place holders to add tasks and due date */
 .input-section {
     display: flex;
     gap: 15px;
@@ -49,9 +46,10 @@ input {
 
 #taskDate {
     width: 130px;
-    color: #70706e;
+    color: rgb(128, 128, 128);
 }
 
+/* Add task button */
 .input-section button {
     width: 100px;
     cursor: pointer;
@@ -65,6 +63,14 @@ input {
     background-color: rgb(46, 137, 223);
 }
 
+/* Error message when there's no input typed */
+#message {
+    color: rgb(248, 5, 5);
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/* Filter Buttons */
 .filters {
     display: flex;
     gap: 8px;
@@ -75,7 +81,7 @@ input {
 
 .filters button {
     background: rgb(71, 70, 70);
-    color: rgb(212, 212, 212);
+    color: rgb(235, 235, 235);
     border: none;
     padding: 5px 10px;
     border-radius: 15px;
@@ -95,6 +101,7 @@ button:hover {
     background-color: rgb(151, 150, 150);
 }
 
+/* Tasks list after adding tasks */
 li {
     list-style: none;
 }
@@ -110,16 +117,18 @@ li {
 }
 
 .task-item:hover {
-    background-color: gray;
+    background-color: rgb(128, 128, 128);
 }
 
+/* Mark complete and delete buttons */
 .completed {
+    color: rgb(184, 177, 177);
     text-decoration: line-through;
 }
 
 .complete-button {
     background-color: rgb(1, 194, 1);
-    color: white;
+    color: rgb(255, 255, 255);
 }
 
 .complete-button:hover {
@@ -128,10 +137,80 @@ li {
 
 .delete-button {
     background-color: rgb(218, 11, 11);
-    color: white;
+    color: rgb(255, 255, 255);
     margin-left: 10px;
 }
 
 .delete-button:hover {
     background-color: rgb(226, 47, 47);
+}
+
+/* Message displayed when no tasks are added yet */
+.no-tasks {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+}
+
+/* Responsiveness with smaller screens (Tablet view) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .input-section {
+        flex-direction: column;
+    }
+
+    #taskInput,
+    #taskDate,
+    .input-section button {
+        width: 100%;
+    }
+
+    .task-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .task-item div:last-child {
+        width: 100%;
+        display: flex;
+        gap: 10px;
+    }
+
+    .complete-button,
+    .delete-button {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* Mobile view */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .filters button {
+        width: 100%;
+    }
 }
