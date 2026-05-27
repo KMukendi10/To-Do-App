@@ -21,6 +21,7 @@ body {
     border-radius: 15px;
 }
 
+/* Heading */
 h1 {
     text-align: center;
     padding: 20px;
@@ -79,15 +80,6 @@ input {
     padding-bottom: 20px;
 }
 
-.filters button {
-    background: rgb(71, 70, 70);
-    color: rgb(235, 235, 235);
-    border: none;
-    padding: 5px 10px;
-    border-radius: 15px;
-    cursor: pointer;
-}
-
 button {
     background: rgb(71, 70, 70);
     color: rgb(231, 229, 229);
@@ -102,10 +94,6 @@ button:hover {
 }
 
 /* Tasks list after adding tasks */
-li {
-    list-style: none;
-}
-
 .task-item {
     display: flex;
     justify-content: space-between;
@@ -117,15 +105,10 @@ li {
 }
 
 .task-item:hover {
-    background-color: rgb(128, 128, 128);
+    background-color: rgb(109, 108, 108);
 }
 
 /* Mark complete and delete buttons */
-.completed {
-    color: rgb(184, 177, 177);
-    text-decoration: line-through;
-}
-
 .complete-button {
     background-color: rgb(1, 194, 1);
     color: rgb(255, 255, 255);
@@ -145,10 +128,16 @@ li {
     background-color: rgb(226, 47, 47);
 }
 
-/* Message displayed when no tasks are added yet */
+/* Marking a task complete */
+.completed {
+    color: rgb(184, 177, 177);
+    text-decoration: line-through;
+}
+
+/* Message displayed when there are no tasks added yet */
 .no-tasks {
     text-align: center;
-    color: rgb(255, 255, 255);
+    color: rgb(216, 215, 215);
     padding: 10px;
 }
 

@@ -16,7 +16,8 @@ This project allows users to add, complete, delete, and filter tasks while stori
   - Active
   - Completed
 - Tasks saved using Local Storage
-- Displays a message when no tasks exist
+- Displays a message when there are no tasks
+- Displays error message when you click add tasks button with an input
 - Responsive and beginner-friendly design
 
 ---

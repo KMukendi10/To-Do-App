@@ -5,13 +5,16 @@ const message = document.querySelector("#message");
 const taskList = document.querySelector("#taskList");
 const filterButtons = document.querySelectorAll(".filters button");
 
+// Retrieve tasks saved in local storage after refresh
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
+// Adding tasks section
 addButton.addEventListener("click", () => {
 
     const taskText = taskInput.value.trim();
     const taskDateValue = taskDate.value;
 
+    // Error Message when there's no input typed
     if (taskText === "") {
         message.textContent = "Please enter a task before adding";
         return;
@@ -19,6 +22,7 @@ addButton.addEventListener("click", () => {
         message.textContent = "";
     }
 
+    // Object for new task
     const newTask = {
         text: taskText,
         date: taskDateValue,
@@ -27,22 +31,27 @@ addButton.addEventListener("click", () => {
 
     tasks.push(newTask);
 
+    // Save and display tasks added to the list
     saveTasks();
     displayTasks();
 
+    // Refresh the input placeholders after clicking add task
     taskInput.value = "";
     taskDate.value = "";
 });
 
+// Filtering Section
 function displayTasks(filter = "All") {
 
     taskList.innerHTML = "";
 
+    // When there's no tasks added yet
     if (tasks.length === 0) {
         taskList.innerHTML = "<p class='no-tasks'>Start by adding a task</p>";
         return;
     }
 
+    // Filter tasks
     tasks.forEach((task, index) => {
 
         if (
@@ -52,6 +61,7 @@ function displayTasks(filter = "All") {
             return;
         }
 
+        // Task list
         const li = document.createElement("li");
         li.classList.add("task-item");
 
@@ -59,16 +69,19 @@ function displayTasks(filter = "All") {
         const taskText = document.createElement("p");
         taskText.textContent = task.text;
 
+        // Task completion
         if (task.completed) {
             taskText.classList.add("completed");
         }
 
+        // Due Date
         const taskDateText = document.createElement("small");
         taskDateText.textContent = task.date;
 
         taskInfo.appendChild(taskText);
         taskInfo.appendChild(taskDateText);
 
+        // Complete and Delete buttons section
         const buttonSection = document.createElement("div");
         const completeButton = document.createElement("button");
         completeButton.textContent = "Complete";
@@ -102,6 +115,7 @@ function displayTasks(filter = "All") {
     });
 }
 
+// Making the filter buttons active
 filterButtons.forEach((button) => {
 
     button.addEventListener("click", () => {
@@ -114,6 +128,7 @@ filterButtons.forEach((button) => {
 
 displayTasks();
 
+// Save my tasks to the local storage
 function saveTasks() {
     localStorage.setItem("tasks", JSON.stringify(tasks));
 }
